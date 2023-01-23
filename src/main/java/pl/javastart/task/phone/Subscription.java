@@ -1,18 +1,15 @@
 package pl.javastart.task.phone;
 
-class Subscription extends Contract implements ContractUtility {
+public class Subscription extends Contract {
+    double subscriptionCost;
 
-    public Subscription(double accountValue) {
-        super(accountValue);
+    public Subscription(double subscriptionCost) {
+        this.subscriptionCost = subscriptionCost;
     }
 
     @Override
-    public String printContractInfo() {
-        return "Rachunek: " + String.format("%.2f", getAccountValue())  + " zł"  + "\n";
+    public String getAdditionalContractInfo() {
+        return "Rachunek: " + String.format("%.2f", subscriptionCost)  + " zł"  + "\n";
     }
-
-    @Override
-    public String toString() {
-        return super.toString() + "\n" + printContractInfo();
-    }
+    
 }
